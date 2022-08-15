@@ -7,6 +7,7 @@
 
 int main(int argc, char* argv[])
 {
+    ShowWindow(GetForegroundWindow(), 0);//è·å–æœ€å‰ç«¯çª—å£çš„å¥æŸ„ï¼Œç„¶åé€šè¿‡ShowWindowéšè— ã€
     backStage Back1;
 
     cout << "argc::" << argc << endl;
@@ -14,9 +15,9 @@ int main(int argc, char* argv[])
 
     string argv0= argv[0];
     string bk = "background";
-    //ÔÚÕâÀï×öÒ»¸öÅĞ¶Ï£¬Èç¹ûµÚÒ»¸öargv[0]="background",µÄ»°¾ÍÖ±½Óµ÷ÓÃ´¿ºóÌ¨´¦ÀíÈÎÎñ£¬·µ»Ø½ø³Ì£¨ºóĞøÉ±ËÀ½ø³ÌÓÃ£©£¬²»Æô¶¯qt¡£·ñÔò¾Í´ò¿ªQT½øĞĞ½çÃæ²Ù×÷¡£
+    //åœ¨è¿™é‡Œåšä¸€ä¸ªåˆ¤æ–­ï¼Œå¦‚æœç¬¬ä¸€ä¸ªargv[0]="background",çš„è¯å°±ç›´æ¥è°ƒç”¨çº¯åå°å¤„ç†ä»»åŠ¡ï¼Œè¿”å›è¿›ç¨‹ï¼ˆåç»­æ€æ­»è¿›ç¨‹ç”¨ï¼‰ï¼Œä¸å¯åŠ¨qtã€‚å¦åˆ™å°±æ‰“å¼€QTè¿›è¡Œç•Œé¢æ“ä½œã€‚
     if (argv0 == bk) {
-        //Éè¶¨Ò»¸öargvµÄ½ÓÊÕ¹æÔò£¬·Ö±ğ°´Ë³Ğò»ñÈ¡²¢·ÅÈë¶ÔÓ¦µÄÄ£¿éÖĞ
+        //è®¾å®šä¸€ä¸ªargvçš„æ¥æ”¶è§„åˆ™ï¼Œåˆ†åˆ«æŒ‰é¡ºåºè·å–å¹¶æ”¾å…¥å¯¹åº”çš„æ¨¡å—ä¸­
         int pid = GetCurrentProcessId();
         cout << "back processing::" <<pid<< endl;
         Back1.backgroundProcessing(argc, argv);
@@ -24,7 +25,7 @@ int main(int argc, char* argv[])
     }
     else {
         QApplication a(argc, argv);
-        QFont f("ºÚÌå", 15);
+        QFont f("é»‘ä½“", 15);
         a.setFont(f);
         zemaxqt w;
         w.setWindowTitle("ZLens");
